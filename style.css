@@ -64,3 +64,38 @@ footer {
   background: #333;
   color: white;
 }
+
+ .banner{  /* este disenio es para crear un banner que a ocupar siempre el 50 % de la pantalla es adatativo a cualquier resolucion */
+  text-align: center;
+  /* margin-bottom: 100px; */
+   text-align: center;
+  height:50vh ;
+  /* background-image: url(imgs/banner2.png);   imagen de prueba*/ 
+
+  /* Atribvutos para centrar la imagen asi como centrar todo sus elementos usando Flex */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+/* Disedios de los parrafos dentro del Banner */
+.parrafos{    
+  background-color:#fef6f0;
+  
+}
+parrafos h1{
+  color: #357a7a;
+  text-align: justify;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+parrafos h2{
+  color: #357a7a;
+  text-align: justify;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
