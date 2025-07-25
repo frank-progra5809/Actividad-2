@@ -59,6 +59,11 @@ nav a {
 }
 
 footer {
+  position:fixed; /*establecemos el pie de pagina fijo*/
+  left:0px; /*hacemos que quede alineado con el borde izquierdo*/
+  bottom:0px; /*hacemos que quede alineado con el borde inferior*/
+  height:50px;  /*le colocamos una altura*/
+  width:100%; /*que el ancho sea toda la pantalla*/
   text-align: center;
   padding: 15px;
   background: #333;
