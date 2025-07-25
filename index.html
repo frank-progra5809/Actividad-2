@@ -1,47 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tesla Motors</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #111827;
+    }
+
+    header {
+      background-color: #111827;
+      color: #ffffff;
+      padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #00bcd4;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #00bcd4, #111827);
+      padding: 40px 0;
+    }
+
+    .hero img {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .grid-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 20px;
+      background-color: #ffffff;
+    }
+
+    .card {
+      background-color: #f0f4f8;
+      border-left: 6px solid #ff3d00;
+      border-radius: 10px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #111827;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .card img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #111827;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Vista móvil */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111827;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 0 0 8px 8px;
+  }
+  nav ul li {
+    text-align: right;
+    padding: 10px 20px;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Logo */
+.logo {
+  height: 80px;         /* tamaño base en PC */
+  width: auto;
+}
+
+/* Ajustamos el contenedor nav para permitir centrar el texto */
+nav {
+  position: relative;
+}
+
+/* Título centrado */
+.titulo-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;      /* tamaño en PC */
+  color: #00bcd4;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .logo {
+    height: 50px;       /* reduce tamaño logo en móvil */
+  }
+  .titulo-header {
+    font-size: 20px;    /* reduce tamaño texto en móvil */
+  }
+}
+
+    
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <h1>Tesla Motors</h1>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="Servicio.html" target="_blank">Servicios</a></li>
-        <li><a href="Contacto.html" target="_blank">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav>
+    <!-- Logo a la izquierda -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/1200px-Tesla_logo.png"
+         alt="Tesla Logo" class="logo">
+
+    <!-- Título centrado -->
+    <h1 class="titulo-header">Tesla Motors</h1>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menú -->
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="Servicio.html" target="_blank">Servicios</a></li>
+      <li><a href="Contacto.html" target="_blank">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <section id="inicio" class="hero">
-    <img src="https://es.digitaltrends.com/wp-content/uploads/2025/01/Tesla-Model-Y.jpeg?resize=1200%2C720&p=1" alt="Logo" width="50%" height="50%">
+    <img src="https://es.digitaltrends.com/wp-content/uploads/2025/01/Tesla-Model-Y.jpeg?resize=1200%2C720&p=1" alt="Tesla Model Y" width="70%">
   </section>
 
   <section id="servicios" class="grid-container">
     <div class="card">
       <h3>Model S Plaid</h3>
-      <p>El Model S Plaid tiene la aceleración más rápida de todos los vehículos en producción. La arquitectura de batería actualizada para todos los modelos del Model S permite realizar recorridos consecutivos sin que el rendimiento se vea afectado.</p>
-      <img src="https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/9004500a220bf3a3d455d15ee052cf8c332606f8/photos/rbbPYbQy-su0OPP7m1T-(edit).jpg?t=169795283235" alt="Logo" width="90%" height="70%">
+      <p>El Model S Plaid tiene la aceleración más rápida de todos los vehículos en producción. Arquitectura de batería optimizada para máximo rendimiento.</p>
+      <img src="https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/9004500a220bf3a3d455d15ee052cf8c332606f8/photos/rbbPYbQy-su0OPP7m1T-(edit).jpg?t=169795283235" alt="Model S Plaid">
     </div>
     <div class="card">
       <h3>Model 3</h3>
-      <p>El Model 3 se beneficia de las mismas características que hacen que nuestros vehículos sean tan seguros: faldones laterales que absorben la energía, un paquete de baterías reforzado instalado en la parte baja del vehículo para reducir el riesgo.</p>
-      <img src="https://www.shop4tesla.com/cdn/shop/articles/tesla-model-3-uber-230000-km-und-tausende-euro-gespart-956682.jpg?v=1728598029" alt="Logo" width="90%" height="70%">
+      <p>El Model 3 cuenta con altos estándares de seguridad, baterías reforzadas y tecnología de conducción semiautónoma.</p>
+      <img src="https://www.shop4tesla.com/cdn/shop/articles/tesla-model-3-uber-230000-km-und-tausende-euro-gespart-956682.jpg?v=1728598029" alt="Model 3">
     </div>
     <div class="card">
       <h3>Model Y</h3>
-      <p>Diseñamos nuestros vehículos para que sean los más seguros del mundo. Las funciones de seguridad activa están diseñadas para ayudar a mitigar la gravedad de los impactos o incluso evitarlos por completo. Funciones como la advertencia de colisión frontal</p>
-      <img src="https://hips.hearstapps.com/hmg-prod/images/model-y-2-redesigned-desktop-678087a70f9a5.jpg?crop=0.6535947712418301xw:1xh;center,top&resize=1200:*" alt="Logo" width="90%" height="70%">
+      <p>El Model Y está diseñado para seguridad total, equipado con sistemas activos de asistencia y prevención de colisiones.</p>
+      <img src="https://hips.hearstapps.com/hmg-prod/images/model-y-2-redesigned-desktop-678087a70f9a5.jpg?crop=0.6535947712418301xw:1xh;center,top&resize=1200:*" alt="Model Y">
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Mi Web</p>
+    <p>&copy; 2025 Tesla Motors. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+  function toggleMenu() {
+    const menu = document.querySelector('nav ul');
+    menu.classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
