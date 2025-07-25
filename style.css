@@ -45,12 +45,6 @@ nav a {
   cursor: pointer;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
 
 .card {
   background: #eee;
@@ -58,17 +52,7 @@ nav a {
   text-align: center;
 }
 
-footer {
-  position:fixed; /*establecemos el pie de pagina fijo*/
-  left:0px; /*hacemos que quede alineado con el borde izquierdo*/
-  bottom:0px; /*hacemos que quede alineado con el borde inferior*/
-  height:50px;  /*le colocamos una altura*/
-  width:100%; /*que el ancho sea toda la pantalla*/
-  text-align: center;
-  padding: 15px;
-  background: #333;
-  color: white;
-}
+
 
  .banner{  /* este disenio es para crear un banner que a ocupar siempre el 50 % de la pantalla es adatativo a cualquier resolucion */
   text-align: center;
